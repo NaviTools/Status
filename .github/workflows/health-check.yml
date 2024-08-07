@@ -48,9 +48,7 @@ jobs:
         run: npm start
         id: metrics
         env:
-          SOURCES: |
-            GitHub->https://github.com
-            Facebook->https://facebook.com
+          SOURCES: ${{ secrets.HEALTH_ENDPOINTS }}
           GITHUB_TOKEN: ${{ github.token }}
           JOB_NAME: ${{ github.workflow }}
           ARTIFACT_NAME: ${{ env.ARTIFACT_NAME }}
